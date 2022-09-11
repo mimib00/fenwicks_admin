@@ -59,6 +59,7 @@ class RegisterScreen extends GetView<AuthController> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) return "Field required";
+                    if (value != controller.password.text.trim()) return "Password doesn't match";
                     return null;
                   },
                 ),

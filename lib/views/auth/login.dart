@@ -27,6 +27,10 @@ class LoginScreen extends GetView<AuthController> {
                   hintText: "Email",
                   labelText: "Email",
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) return "Field required";
+                  return null;
+                },
               ),
               TextFormField(
                 controller: controller.password,
@@ -36,10 +40,18 @@ class LoginScreen extends GetView<AuthController> {
                   hintText: "Password",
                   labelText: "Password",
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) return "Field required";
+                  return null;
+                },
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (controller.loginKey.currentState!.validate()) {
+                    controller.login();
+                  }
+                },
                 child: const Text("Login"),
               ),
               const SizedBox(height: 20),

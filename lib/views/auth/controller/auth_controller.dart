@@ -19,19 +19,32 @@ class AuthController extends GetxController {
   void register() async {
     try {
       Get.dialog(const Loading(), barrierDismissible: false);
-      if (password.text.trim() != confirmPassword.text.trim()) throw "Passwords don't match";
       UserCredential credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email.text.trim(),
         password: password.text.trim(),
       );
       user = credential.user;
-      // final fcmToken = await FirebaseMessaging.instance.getToken();
 
       FirebaseMessaging.instance.subscribeToTopic("admins");
 
       await FirebaseFirestore.instance.collection("admins").doc(user!.uid).set({
         "email": email.text.trim(),
       });
+      Get.back();
+    } on FirebaseException catch (e) {
+      Get.back();
+      Get.showSnackbar(errorCard(e.code));
+    }
+  }
+
+  void login() async {
+    try {
+      Get.dialog(const Loading(), barrierDismissible: false);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email.text.trim(),
+        password: password.text.trim(),
+      );
+
       Get.back();
     } on FirebaseException catch (e) {
       Get.back();

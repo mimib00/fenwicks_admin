@@ -1,6 +1,7 @@
 import 'package:fenwicks_admin/core/routes/routes.dart';
 import 'package:fenwicks_admin/firebase_options.dart';
 import 'package:fenwicks_admin/views/auth/controller/auth_controller.dart';
+import 'package:fenwicks_admin/views/home/controllers/navigation_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +13,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Get.put(AuthController(), permanent: true);
+  Get.put(NavigationController(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
       ),
-      initialRoute: Routes.login,
+      initialRoute: Routes.splash,
       getPages: Routes.routes,
     );
   }
