@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         if (user == null) {
           Get.offAllNamed(Routes.login);
         } else {
-          Get.offAllNamed(Routes.home);
+          Get.offAllNamed(Routes.root);
         }
       },
     );

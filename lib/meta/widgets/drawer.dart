@@ -1,5 +1,5 @@
 import 'package:fenwicks_admin/meta/utils/constants.dart';
-import 'package:fenwicks_admin/views/home/controllers/navigation_controller.dart';
+import 'package:fenwicks_admin/views/root/controllers/navigation_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
