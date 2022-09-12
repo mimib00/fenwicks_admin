@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fenwicks_admin/meta/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -131,7 +132,21 @@ class ProductDetails extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.defaultDialog(
+                title: "Warning",
+                content: const Text("Are you sure you want to delete this?"),
+                confirm: TextButton(
+                  onPressed: () async {
+                    await FirebaseFirestore.instance.collection("products").doc(product.uid).delete();
+                    Get.back();
+                    Get.back();
+                  },
+                  child: const Text("Yes"),
+                ),
+                cancel: TextButton(onPressed: () => Get.back(), child: const Text("No")),
+              );
+            },
             backgroundColor: Colors.red,
             child: const Icon(Icons.delete_forever),
           ),
