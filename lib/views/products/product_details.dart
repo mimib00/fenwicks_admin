@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fenwicks_admin/core/routes/routes.dart';
 import 'package:fenwicks_admin/meta/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -127,7 +128,9 @@ class ProductDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(Routes.addProduct, arguments: product);
+            },
             child: const Icon(Icons.edit),
           ),
           const SizedBox(height: 10),
