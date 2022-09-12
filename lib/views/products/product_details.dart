@@ -122,9 +122,20 @@ class ProductDetails extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.edit),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {},
+            child: const Icon(Icons.edit),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Colors.red,
+            child: const Icon(Icons.delete_forever),
+          ),
+        ],
       ),
     );
   }

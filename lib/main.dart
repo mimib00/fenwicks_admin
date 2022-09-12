@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,18 +23,43 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Fenwicks Admin',
-      debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.cupertino,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme: const AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle.light,
+    return Sizer(
+      builder: (context, orientation, deviceType) => GetMaterialApp(
+        title: 'Fenwicks Admin',
+        debugShowCheckedModeBanner: false,
+        defaultTransition: Transition.cupertino,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+          ),
+          inputDecorationTheme: InputDecorationTheme(
+            hintStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 10.sp,
+              color: const Color(0xff525252),
+              letterSpacing: 0,
+            ),
+            fillColor: const Color(0xffF2F2F2),
+            filled: true,
+            suffixIconColor: const Color(0xffcacaca),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none,
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none,
+            ),
+          ),
         ),
+        initialRoute: Routes.splash,
+        getPages: Routes.routes,
       ),
-      initialRoute: Routes.splash,
-      getPages: Routes.routes,
     );
   }
 }
