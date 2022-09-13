@@ -43,6 +43,7 @@ dependencies:
   firebase_messaging: ^13.0.0
   sizer: ^2.0.15
   http: ^0.13.5
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
