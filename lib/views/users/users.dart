@@ -1,4 +1,5 @@
 import 'package:fenwicks_admin/meta/models/user.dart';
+import 'package:fenwicks_admin/views/users/components/points_dialog.dart';
 import 'package:fenwicks_admin/views/users/controllers/users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,7 +43,9 @@ class UsersScreen extends GetView<UsersController> {
                     itemCount: query.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        onTap: () {},
+                        onTap: () {
+                          Get.dialog(PointsDialog(user: query[index]));
+                        },
                         leading: const CircleAvatar(child: Icon(Icons.person)),
                         title: Text(query[index].name),
                         subtitle: Text(query[index].email),

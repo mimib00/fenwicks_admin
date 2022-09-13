@@ -56,6 +56,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.quantity,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   hintText: product == null ? "Available Quantity" : "Available Quantity: ${product.quantity}",
@@ -70,6 +71,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.price,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   // hintText: "Price",
@@ -85,6 +87,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.points,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   hintText: product == null ? "Points" : "Points: ${product.points}",
@@ -99,6 +102,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.bounus,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   hintText: product == null ? "Bounus" : "Bounus: ${product.bounus}",
@@ -113,6 +117,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.servings,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   hintText: product == null ? "Servings" : "Servings: ${product.servings}",
@@ -140,6 +145,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.sku,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   hintText: product == null ? "Stock Keeping Unit (sku)" : "SKU: ${product.sku}",
@@ -154,6 +160,7 @@ class AddProductScreen extends GetView<ProductsController> {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: TextFormField(
                 controller: controller.level,
+                keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: InputDecoration(
                   hintText: product == null ? "Level" : "Level: ${product.level}",
