@@ -1,5 +1,6 @@
 import 'package:fenwicks_admin/views/auth/login.dart';
 import 'package:fenwicks_admin/views/auth/register.dart';
+import 'package:fenwicks_admin/views/events/add_event.dart';
 import 'package:fenwicks_admin/views/events/event_details.dart';
 import 'package:fenwicks_admin/views/products/add_product.dart';
 import 'package:fenwicks_admin/views/products/product_details.dart';
@@ -27,6 +28,6 @@ class Routes {
     GetPage<Widget>(name: productDetails, page: () => const ProductDetails()),
     GetPage<Widget>(name: addProduct, page: () => const AddProductScreen()),
     GetPage<Widget>(name: eventDetails, page: () => const EventDetail()),
-    GetPage<Widget>(name: addEvent, page: () => const AddProductScreen()),
+    GetPage<Widget>(name: addEvent, page: () => const AddEventScreen()),
   ];
 }

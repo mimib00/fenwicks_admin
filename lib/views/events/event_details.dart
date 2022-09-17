@@ -20,19 +20,21 @@ class EventDetail extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(10),
         children: [
-          // Container(
-          //   alignment: Alignment.center,
-          //   decoration: BoxDecoration(
-          //     color: event.quantity == 0 ? Colors.red : Colors.green,
-          //     borderRadius: BorderRadius.circular(10),
-          //   ),
-          //   padding: const EdgeInsets.symmetric(vertical: 5),
-          //   margin: const EdgeInsets.only(bottom: 10),
-          //   child: Text(
-          //     event.quantity == 0 ? "Out of Stock" : "In Stock",
-          //     style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
-          //   ),
-          // ),
+          Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: event.date.microsecondsSinceEpoch <= Timestamp.now().microsecondsSinceEpoch
+                  ? Colors.red
+                  : Colors.green,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 5),
+            margin: const EdgeInsets.only(bottom: 10),
+            child: Text(
+              event.date.microsecondsSinceEpoch <= Timestamp.now().microsecondsSinceEpoch ? "Passed" : "Up coming",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Row(
@@ -69,7 +71,6 @@ class EventDetail extends StatelessWidget {
               ],
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Row(
@@ -127,11 +128,13 @@ class EventDetail extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            heroTag: "btn1",
             onPressed: () {},
             child: const Icon(Icons.qr_code_2),
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
+            heroTag: "btn2",
             onPressed: () {
               Get.toNamed(Routes.addEvent, arguments: event);
             },
@@ -139,6 +142,7 @@ class EventDetail extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
+            heroTag: "btn3",
             onPressed: () {
               Get.defaultDialog(
                 title: "Warning",

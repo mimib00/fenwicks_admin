@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fenwicks_admin/core/routes/routes.dart';
 import 'package:fenwicks_admin/meta/models/event.dart';
 import 'package:fenwicks_admin/views/events/components/product_tile.dart';
 import 'package:fenwicks_admin/views/events/controller/events_controller.dart';
@@ -31,7 +32,9 @@ class EventScreen extends GetView<EventsController> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.addEvent);
+        },
         child: const Icon(Icons.add_rounded),
       ),
     );

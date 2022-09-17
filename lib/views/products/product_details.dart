@@ -128,6 +128,7 @@ class ProductDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            heroTag: "btn1",
             onPressed: () {
               Get.toNamed(Routes.addProduct, arguments: product);
             },
@@ -135,6 +136,7 @@ class ProductDetails extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
+            heroTag: "btn2",
             onPressed: () {
               Get.defaultDialog(
                 title: "Warning",
