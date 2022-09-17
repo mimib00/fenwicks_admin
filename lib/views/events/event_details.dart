@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fenwicks_admin/core/routes/routes.dart';
 import 'package:fenwicks_admin/meta/models/event.dart';
+import 'package:fenwicks_admin/views/events/controller/events_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class EventDetail extends StatelessWidget {
+class EventDetail extends GetView<EventsController> {
   const EventDetail({super.key});
 
   @override
@@ -129,7 +130,9 @@ class EventDetail extends StatelessWidget {
         children: [
           FloatingActionButton(
             heroTag: "btn1",
-            onPressed: () {},
+            onPressed: () {
+              controller.genrateQR(event.secret);
+            },
             child: const Icon(Icons.qr_code_2),
           ),
           const SizedBox(height: 10),

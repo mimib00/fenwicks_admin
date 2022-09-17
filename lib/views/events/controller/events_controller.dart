@@ -2,8 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fenwicks_admin/meta/models/event.dart';
 import 'package:fenwicks_admin/meta/widgets/loading.dart';
 import 'package:fenwicks_admin/meta/widgets/snack_bar.dart';
+import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:screenshot/screenshot.dart';
 
 class EventsController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -14,6 +17,8 @@ class EventsController extends GetxController {
   final TextEditingController address = TextEditingController();
   final TextEditingController secret = TextEditingController();
 
+  ScreenshotController screenshotController = ScreenshotController();
+
   Stream<QuerySnapshot<Map<String, dynamic>>> getEvents() {
     return FirebaseFirestore.instance.collection("events").snapshots();
   }
@@ -21,6 +26,51 @@ class EventsController extends GetxController {
   RxString dropValue = EventTypes.concert.name.obs;
 
   Rx<DateTime> time = Rx(DateTime.now());
+
+  void genrateQR(String text) {
+    Get.dialog(
+      Align(
+        alignment: Alignment.center,
+        child: Material(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          child: Container(
+            width: 300,
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                QrImage(
+                  data: text,
+                  version: QrVersions.auto,
+                  size: 300,
+                ),
+                ElevatedButton.icon(
+                  onPressed: () async {
+                    final image = await screenshotController.captureFromWidget(
+                      Container(
+                        color: Colors.white,
+                        child: QrImage(
+                          data: text,
+                          version: QrVersions.auto,
+                          size: 300,
+                        ),
+                      ),
+                    );
+                    await FileSaver.instance.saveFile("QR_${DateTime.now().millisecondsSinceEpoch}", image, ".jpg",
+                        mimeType: MimeType.JPEG);
+                    Get.back();
+                  },
+                  icon: const Icon(Icons.download),
+                  label: const Text("Download"),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   void addEvent() async {
     try {
