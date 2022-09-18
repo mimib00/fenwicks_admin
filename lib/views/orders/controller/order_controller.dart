@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fenwicks_admin/meta/widgets/snack_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class OrderController extends GetxController {
+class OrderController extends GetxController with GetTickerProviderStateMixin {
+  late TabController tabController;
+
   final CollectionReference<Map<String, dynamic>> _ref = FirebaseFirestore.instance.collection("orders");
 
   RxString filter = "all".obs;
@@ -12,7 +15,7 @@ class OrderController extends GetxController {
     update();
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> getOrders() {
+  Stream<QuerySnapshot<Map<String, dynamic>>>? getOrders() {
     Stream<QuerySnapshot<Map<String, dynamic>>>? snap;
     try {
       if (filter.value == "pending") {
@@ -27,8 +30,7 @@ class OrderController extends GetxController {
     } on FirebaseException catch (e) {
       Get.showSnackbar(errorCard(e.message!));
     }
-
-    return snap!;
+    return snap;
   }
 
   void changeStatus(String status, String id) async {
@@ -45,5 +47,11 @@ class OrderController extends GetxController {
     } on FirebaseException catch (e) {
       Get.showSnackbar(errorCard(e.message!));
     }
+  }
+
+  @override
+  void onInit() {
+    tabController = TabController(length: 4, vsync: this);
+    super.onInit();
   }
 }
