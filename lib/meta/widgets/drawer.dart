@@ -65,7 +65,7 @@ class AdminDrawer extends GetView<NavigationController> {
               title: const Text("Events"),
             ),
             ListTile(
-              onTap: () => controller.select(2),
+              onTap: () => controller.select(3),
               leading: Container(
                 height: 40,
                 width: 40,

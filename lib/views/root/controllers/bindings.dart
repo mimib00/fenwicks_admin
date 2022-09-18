@@ -1,4 +1,5 @@
 import 'package:fenwicks_admin/views/events/controller/events_controller.dart';
+import 'package:fenwicks_admin/views/orders/controller/order_controller.dart';
 import 'package:fenwicks_admin/views/products/controller/products_controll.dart';
 import 'package:fenwicks_admin/views/users/controllers/users_controller.dart';
 import 'package:get/get.dart';
@@ -9,5 +10,6 @@ class RootBindings extends Bindings {
     Get.lazyPut(() => ProductsController());
     Get.lazyPut(() => UsersController());
     Get.lazyPut(() => EventsController());
+    Get.lazyPut(() => OrderController());
   }
 }

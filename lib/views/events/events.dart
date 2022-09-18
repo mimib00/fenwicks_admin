@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fenwicks_admin/core/routes/routes.dart';
 import 'package:fenwicks_admin/meta/models/event.dart';
-import 'package:fenwicks_admin/views/events/components/product_tile.dart';
+import 'package:fenwicks_admin/views/events/components/event_tile.dart';
 import 'package:fenwicks_admin/views/events/controller/events_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
