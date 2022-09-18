@@ -21,7 +21,7 @@ class OrderTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
-        // onTap: () => Get.toNamed(Routes.productDetails, arguments: order),
+        onTap: () => Get.toNamed(Routes.orderDetails, arguments: order),
         leading: const CircleAvatar(
           backgroundColor: kSelectedIconBackgroundColor,
           foregroundColor: Colors.white,

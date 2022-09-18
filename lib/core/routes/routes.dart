@@ -2,6 +2,7 @@ import 'package:fenwicks_admin/views/auth/login.dart';
 import 'package:fenwicks_admin/views/auth/register.dart';
 import 'package:fenwicks_admin/views/events/add_event.dart';
 import 'package:fenwicks_admin/views/events/event_details.dart';
+import 'package:fenwicks_admin/views/orders/order_details.dart';
 import 'package:fenwicks_admin/views/products/add_product.dart';
 import 'package:fenwicks_admin/views/products/product_details.dart';
 import 'package:fenwicks_admin/views/root/controllers/bindings.dart';
@@ -19,6 +20,7 @@ class Routes {
   static const addProduct = '/products/add';
   static const eventDetails = '/events/details';
   static const addEvent = '/events/add';
+  static const orderDetails = '/orders/details';
 
   static List<GetPage<dynamic>> routes = [
     GetPage<Widget>(name: root, page: () => const RootScreen(), binding: RootBindings()),
@@ -29,5 +31,6 @@ class Routes {
     GetPage<Widget>(name: addProduct, page: () => const AddProductScreen()),
     GetPage<Widget>(name: eventDetails, page: () => const EventDetail()),
     GetPage<Widget>(name: addEvent, page: () => const AddEventScreen()),
+    GetPage<Widget>(name: orderDetails, page: () => const OrderDetail()),
   ];
 }

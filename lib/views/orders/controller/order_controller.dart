@@ -31,16 +31,16 @@ class OrderController extends GetxController {
     return snap!;
   }
 
-  void changeStatus(String status, String id, bool delete) async {
+  void changeStatus(String status, String id) async {
     try {
       await _ref.doc(id).set({"status": status}, SetOptions(merge: true));
-      if (delete) {
-        final snap = await FirebaseFirestore.instance.collection("admins").get();
-        final admin = snap.docs.first;
-        await FirebaseFirestore.instance.collection("admins").doc(admin.id).set({
-          "notifications": FieldValue.arrayRemove([id])
-        }, SetOptions(merge: true));
-      }
+      // if (delete) {
+      //   final snap = await FirebaseFirestore.instance.collection("admins").get();
+      //   final admin = snap.docs.first;
+      //   await FirebaseFirestore.instance.collection("admins").doc(admin.id).set({
+      //     "notifications": FieldValue.arrayRemove([id])
+      //   }, SetOptions(merge: true));
+      // }
       Get.back();
     } on FirebaseException catch (e) {
       Get.showSnackbar(errorCard(e.message!));
