@@ -98,23 +98,6 @@ class AdminDrawer extends GetView<NavigationController> {
               ),
               title: const Text("Send Notifications"),
             ),
-            ListTile(
-              onTap: () {},
-              leading: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                  color: kSelectedIconBackgroundColor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Icon(
-                  Icons.notifications_active,
-                  size: 30,
-                  color: Colors.white,
-                ),
-              ),
-              title: const Text("Notification"),
-            ),
             const Spacer(),
             ListTile(
               onTap: () {
