@@ -36,6 +36,7 @@ class RegisterScreen extends GetView<AuthController> {
                     return null;
                   },
                 ),
+                const SizedBox(height: 10),
                 TextFormField(
                   controller: controller.password,
                   obscureText: true,
@@ -49,6 +50,7 @@ class RegisterScreen extends GetView<AuthController> {
                     return null;
                   },
                 ),
+                const SizedBox(height: 10),
                 TextFormField(
                   controller: controller.confirmPassword,
                   obscureText: true,
