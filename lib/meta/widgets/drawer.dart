@@ -82,7 +82,7 @@ class AdminDrawer extends GetView<NavigationController> {
               title: const Text("Orders"),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () => controller.select(4),
               leading: Container(
                 height: 40,
                 width: 40,
@@ -96,7 +96,7 @@ class AdminDrawer extends GetView<NavigationController> {
                   color: Colors.white,
                 ),
               ),
-              title: const Text("Notifications"),
+              title: const Text("Send Notifications"),
             ),
             ListTile(
               onTap: () {},
@@ -108,12 +108,12 @@ class AdminDrawer extends GetView<NavigationController> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Icon(
-                  Icons.shopping_cart_checkout_rounded,
+                  Icons.notifications_active,
                   size: 30,
                   color: Colors.white,
                 ),
               ),
-              title: const Text("New Orders"),
+              title: const Text("Notification"),
             ),
             const Spacer(),
             ListTile(

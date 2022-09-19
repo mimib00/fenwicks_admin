@@ -1,5 +1,6 @@
 import 'package:fenwicks_admin/views/events/controller/events_controller.dart';
 import 'package:fenwicks_admin/views/events/events.dart';
+import 'package:fenwicks_admin/views/notifications/notification.dart';
 import 'package:fenwicks_admin/views/orders/orders.dart';
 import 'package:fenwicks_admin/views/products/products.dart';
 import 'package:fenwicks_admin/views/users/users.dart';
@@ -12,6 +13,7 @@ class NavigationController extends GetxController {
     const UsersScreen(),
     const EventScreen(),
     const OrdersScreen(),
+    const SendNotification(),
   ];
 
   RxInt index = 0.obs;
