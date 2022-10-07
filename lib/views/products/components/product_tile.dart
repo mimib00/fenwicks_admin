@@ -1,6 +1,6 @@
-import 'package:fenwicks_admin/core/routes/routes.dart';
-import 'package:fenwicks_admin/meta/models/product.dart';
-import 'package:fenwicks_admin/meta/utils/constants.dart';
+import 'package:fenwick_admin/core/routes/routes.dart';
+import 'package:fenwick_admin/meta/models/product.dart';
+import 'package:fenwick_admin/meta/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

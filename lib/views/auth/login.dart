@@ -1,5 +1,5 @@
-import 'package:fenwicks_admin/core/routes/routes.dart';
-import 'package:fenwicks_admin/views/auth/controller/auth_controller.dart';
+import 'package:fenwick_admin/core/routes/routes.dart';
+import 'package:fenwick_admin/views/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

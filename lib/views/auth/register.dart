@@ -1,4 +1,4 @@
-import 'package:fenwicks_admin/views/auth/controller/auth_controller.dart';
+import 'package:fenwick_admin/views/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,7 +1,7 @@
-import 'package:fenwicks_admin/core/routes/routes.dart';
-import 'package:fenwicks_admin/firebase_options.dart';
-import 'package:fenwicks_admin/views/auth/controller/auth_controller.dart';
-import 'package:fenwicks_admin/views/root/controllers/navigation_controller.dart';
+import 'package:fenwick_admin/core/routes/routes.dart';
+import 'package:fenwick_admin/firebase_options.dart';
+import 'package:fenwick_admin/views/auth/controller/auth_controller.dart';
+import 'package:fenwick_admin/views/root/controllers/navigation_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';

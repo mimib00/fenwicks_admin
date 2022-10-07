@@ -1,4 +1,4 @@
-package com.example.fenwicks_admin
+package com.example.fenwick_admin
 
 import io.flutter.embedding.android.FlutterActivity
 

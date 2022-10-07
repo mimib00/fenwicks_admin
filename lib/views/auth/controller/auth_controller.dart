@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fenwicks_admin/meta/widgets/loading.dart';
-import 'package:fenwicks_admin/meta/widgets/snack_bar.dart';
+import 'package:fenwick_admin/meta/widgets/loading.dart';
+import 'package:fenwick_admin/meta/widgets/snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';

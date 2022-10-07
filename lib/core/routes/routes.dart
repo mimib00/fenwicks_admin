@@ -1,13 +1,13 @@
-import 'package:fenwicks_admin/views/auth/login.dart';
-import 'package:fenwicks_admin/views/auth/register.dart';
-import 'package:fenwicks_admin/views/events/add_event.dart';
-import 'package:fenwicks_admin/views/events/event_details.dart';
-import 'package:fenwicks_admin/views/orders/order_details.dart';
-import 'package:fenwicks_admin/views/products/add_product.dart';
-import 'package:fenwicks_admin/views/products/product_details.dart';
-import 'package:fenwicks_admin/views/root/controllers/bindings.dart';
-import 'package:fenwicks_admin/views/root/root.dart';
-import 'package:fenwicks_admin/views/splash/splash.dart';
+import 'package:fenwick_admin/views/auth/login.dart';
+import 'package:fenwick_admin/views/auth/register.dart';
+import 'package:fenwick_admin/views/events/add_event.dart';
+import 'package:fenwick_admin/views/events/event_details.dart';
+import 'package:fenwick_admin/views/orders/order_details.dart';
+import 'package:fenwick_admin/views/products/add_product.dart';
+import 'package:fenwick_admin/views/products/product_details.dart';
+import 'package:fenwick_admin/views/root/controllers/bindings.dart';
+import 'package:fenwick_admin/views/root/root.dart';
+import 'package:fenwick_admin/views/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

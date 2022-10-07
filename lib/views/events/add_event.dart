@@ -1,5 +1,5 @@
-import 'package:fenwicks_admin/meta/models/event.dart';
-import 'package:fenwicks_admin/views/events/controller/events_controller.dart';
+import 'package:fenwick_admin/meta/models/event.dart';
+import 'package:fenwick_admin/views/events/controller/events_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

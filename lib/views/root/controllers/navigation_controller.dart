@@ -1,8 +1,8 @@
-import 'package:fenwicks_admin/views/events/events.dart';
-import 'package:fenwicks_admin/views/notifications/send_notification.dart';
-import 'package:fenwicks_admin/views/orders/orders.dart';
-import 'package:fenwicks_admin/views/products/products.dart';
-import 'package:fenwicks_admin/views/users/users.dart';
+import 'package:fenwick_admin/views/events/events.dart';
+import 'package:fenwick_admin/views/notifications/send_notification.dart';
+import 'package:fenwick_admin/views/orders/orders.dart';
+import 'package:fenwick_admin/views/products/products.dart';
+import 'package:fenwick_admin/views/users/users.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

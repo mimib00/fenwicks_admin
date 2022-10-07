@@ -8,6 +8,7 @@ class Users {
   final List<Address>? address;
   final int points;
   final String token;
+  final bool isActive;
 
   Users(
     this.name,
@@ -17,9 +18,10 @@ class Users {
     this.token, {
     this.id,
     this.address,
+    this.isActive = true,
   });
 
-  factory Users.fromJson(Map<String, dynamic> data, {String? uid}) {
+  factory Users.fromJson(Map<String, dynamic> data, {bool? isActive, String? uid}) {
     List<Address> addresses = [];
     List? temp = data["address"];
     if (temp != null && temp.isNotEmpty) {
@@ -36,6 +38,7 @@ class Users {
       data["token"] ?? '',
       address: addresses,
       id: uid,
+      isActive: isActive ?? true,
     );
   }
 

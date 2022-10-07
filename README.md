@@ -1,4 +1,4 @@
-# fenwicks_admin
+# fenwick_admin
 
 A new Flutter project.
 

@@ -1,5 +1,5 @@
-import 'package:fenwicks_admin/meta/models/product.dart';
-import 'package:fenwicks_admin/views/products/controller/products_controll.dart';
+import 'package:fenwick_admin/meta/models/product.dart';
+import 'package:fenwick_admin/views/products/controller/products_controll.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

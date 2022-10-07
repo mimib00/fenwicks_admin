@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>449025692275-kpc9o4bvol23hhe7jdc7pckmufrtqf6r.apps.googleusercontent.com</string>
+	<string>449025692275-s6dniktdclhqllv8eq0a248ct9aj643m.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.449025692275-kpc9o4bvol23hhe7jdc7pckmufrtqf6r</string>
+	<string>com.googleusercontent.apps.449025692275-s6dniktdclhqllv8eq0a248ct9aj643m</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA3zAcRKDtjhm6nTdne8AiM6xE2qgOPmy8</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.duseca.fenwicksAdmin</string>
+	<string>com.fenwicks.admin</string>
 	<key>PROJECT_ID</key>
 	<string>fenwicks-pub-a46a5</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:449025692275:ios:eeb0bdf576d2b5a4351006</string>
+	<string>1:449025692275:ios:228366ad00a8406d351006</string>
 </dict>
 </plist>

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fenwicks_admin/meta/models/order.dart';
-import 'package:fenwicks_admin/meta/models/user.dart';
-import 'package:fenwicks_admin/views/orders/components/order_tile.dart';
-import 'package:fenwicks_admin/views/orders/controller/order_controller.dart';
+import 'package:fenwick_admin/meta/models/order.dart';
+import 'package:fenwick_admin/meta/models/user.dart';
+import 'package:fenwick_admin/views/orders/components/order_tile.dart';
+import 'package:fenwick_admin/views/orders/controller/order_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

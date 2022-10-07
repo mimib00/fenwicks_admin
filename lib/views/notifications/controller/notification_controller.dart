@@ -1,8 +1,7 @@
-import 'package:fenwicks_admin/meta/widgets/loading.dart';
-import 'package:fenwicks_admin/meta/widgets/snack_bar.dart';
+import 'package:fenwick_admin/meta/widgets/loading.dart';
+import 'package:fenwick_admin/meta/widgets/snack_bar.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart' as material;
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -17,9 +16,10 @@ class NotificationController extends GetxController {
     try {
       Get.dialog(const Loading(), barrierDismissible: false);
       // send http request
-      final url = Uri.parse("https://us-central1-fenwicks-pub-a46a5.cloudfunctions.net/sendNotifications");
+      final url =
+          Uri.parse("https://us-central1-fenwicks-pub-a46a5.cloudfunctions.net/sendNotifications");
 
-      final res = await http.post(
+      await http.post(
         url,
         body: {
           "title": title.text.trim(),
@@ -27,24 +27,6 @@ class NotificationController extends GetxController {
         },
       );
 
-      // // throw error
-      // if (res.statusCode == 404) throw res.body;
-      // show status is good and clear fields
-      Get.showSnackbar(
-        const GetSnackBar(
-          duration: Duration(seconds: 3),
-          title: "Success",
-          messageText: Text(
-            "Notification has been sent",
-            style: TextStyle(
-              fontSize: 18,
-              fontFamily: "Baloo",
-              color: material.Colors.white,
-            ),
-          ),
-          backgroundColor: material.Colors.green,
-        ),
-      );
       title.clear();
       body.clear();
       Get.back();
@@ -55,7 +37,6 @@ class NotificationController extends GetxController {
   }
 
   final FirebaseMessaging _messaging = FirebaseMessaging.instance;
-  // final CollectionReference<Map<String, dynamic>> _ref = FirebaseFirestore.instance.collection("orders");
 
   final AndroidNotificationChannel channel = const AndroidNotificationChannel(
     'high_importance_channel',
@@ -63,7 +44,8 @@ class NotificationController extends GetxController {
     description: 'This channel is used for important notifications.',
     importance: Importance.high,
   );
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
 
   void onDidReceiveLocalNotification(int id, String? title, String? body, String? payload) async {
     // display a dialog with the notification details, tap ok to go to another page
